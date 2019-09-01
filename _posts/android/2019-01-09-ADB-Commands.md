@@ -1,3 +1,9 @@
+---
+title: ADB Commands
+tags: - android
+date: 2019-09-01
+---
+
 # ADB commands
 
 - In folder `~/Library/Android/sdk/platform-tools`
