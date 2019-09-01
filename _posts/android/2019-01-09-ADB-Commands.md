@@ -1,6 +1,5 @@
 ---
 title: ADB Commands
-date: 2019-09-01
 ---
 
 # ADB commands

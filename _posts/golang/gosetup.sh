@@ -5,6 +5,4 @@ go build
 # copy go-bindata into any directory on your PATH
 cp go-bindata ~/gocode/bin
 
-export PATH=$PATH:/home/ejabberd/gocode/bin
-
-
+export PATH=$PATH:/home/__USER__/gocode/bin

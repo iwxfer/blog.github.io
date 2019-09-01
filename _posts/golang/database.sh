@@ -6,5 +6,3 @@ go build
 cp go-bindata ~/gocode/bin
 
 export PATH=$PATH:/home/ejabberd/gocode/bin
-
-
