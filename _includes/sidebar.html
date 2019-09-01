@@ -14,3 +14,14 @@
 <div class="sidebar well">
 {% include links-list.html %}
 </div>
+
+<div class="sidebar well">
+    <h1>Tags</h1>
+    {% for post in site.categories['X'] %}
+    {% for tag in post.tags %}
+
+       {{ tag  }}
+
+    {% endfor %}
+    {% endfor %}
+</div>
