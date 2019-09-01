@@ -1,0 +1,24 @@
+a2enmod rewrite
+# add  to `/etc/hosts`
+127.0.0.1 hackit
+
+# upload files to /var/www/hackit.
+cd /etc/apache2
+a2ensite hackit
+
+# Agregar al final de /etc/apache2/sites-available/default
+<VirtualHost *:80>
+        ServerAdmin webmaster@webeloper
+        ServerName webeloper.info
+        DocumentRoot /var/www/webeloper
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /var/www/webeloper>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+        </Directory>
+</VirtualHost>
