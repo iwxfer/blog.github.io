@@ -15,7 +15,6 @@
 {% include links-list.html %}
 </div>
 
-{% raw %}
 <h2>Tags</h2>
 <ul>
 {{ "{% assign sorted_tags = site.tags | sort " }}%}
@@ -29,5 +28,4 @@
   	</a>
   </li>
 {{ "{% endfor " }}%}
-{% endraw %}
 </ul>
