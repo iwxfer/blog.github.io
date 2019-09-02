@@ -1,19 +1,22 @@
-##
-## try / else
-##
+## try except else
+
+```python
 for arg in sys.argv[1:]:
     try:
         f = open(arg, 'r')
     except IOError:
-        print 'cannot open', arg
+        print(f'cannot open {arg}')
     else:
         """ if the try clause does not raise an exception """
         print arg, 'has', len(f.readlines()), 'lines'
         f.close()
+```
 
-##
 ## Custom Error
-##
+
+keyword `raise`
+
+```python
 class MyError(Exception):
     def __init__(self, value):
         self.value = value
@@ -26,9 +29,35 @@ except MyError as e:
     print('My exception occurred, value:', e.value)
 
 raise MyError('oops!') // prints traceback
+```
 
-print "fer";
+## traceback
 
+```python
+import logging
+LOG_FILENAME = '/tmp/logging_example.out'
+logging.basicConfig(filename=LOG_FILENAME, level=logging.DEBUG)
+
+try:
+    run_my_stuff()
+except:
+    logging.exception('Got exception on main handler')
+    raise
+```
+
+Storing trace in string
+
+```python
+import traceback
+try:
+    int('k')
+except:
+    var = traceback.format_exc()
+```
+
+## Exception types
+
+```
 BaseException
  +-- SystemExit
  +-- KeyboardInterrupt
@@ -79,3 +108,4 @@ BaseException
 	   +-- ImportWarning
 	   +-- UnicodeWarning
 	   +-- BytesWarning
+```
