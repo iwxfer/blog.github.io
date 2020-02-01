@@ -1,4 +1,6 @@
 http://learnyousomeerlang.com/mnesia
+
+
 mnesia:info(). %to overview mnesia
 mnesia:schema(schema). %see table named schema`s detail
 

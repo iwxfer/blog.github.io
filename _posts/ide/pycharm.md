@@ -1,0 +1,18 @@
+# hotkeys
+
+Alt + F7 : usages of a function
+Alt + F1 : focus
+Ctrl + N : class
+Ctrl + Shift + N : file
+Ctrl + G : Goto line number
+Ctrl + U : Goto to super method
+
+## Debug hotkeys
+
+Shift + F8 : Step Out
+        F7 : in (Alt + Shift + F7)
+        F8 : next
+
+ Alt + F10 : Current
+  Alt + F9 : Cursor
+  Alt + F8 : Evaluate expression
