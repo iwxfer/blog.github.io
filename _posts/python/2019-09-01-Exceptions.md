@@ -1,4 +1,4 @@
-## try except else
+## Basic Example
 
 ```python
 for arg in sys.argv[1:]:
@@ -31,7 +31,7 @@ except MyError as e:
 raise MyError('oops!') // prints traceback
 ```
 
-## traceback
+## Traceback
 
 ```python
 import logging
@@ -55,6 +55,14 @@ except:
     var = traceback.format_exc()
 ```
 
+```python
+import traceback
+except Exception as e:
+    e_type, e_val, _ = sys.exc_info()
+    trace = traceback.format_exc()
+    log.error(f"--\nError: [{e_type}: {e_val}]\n--\n{trace}")
+    raise
+```
 ## Exception types
 
 ```

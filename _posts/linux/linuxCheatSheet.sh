@@ -1,17 +1,16 @@
 # postscrpit manual to pdf
 man -t man | ps2pdf
 
-#####################################
 #  Regular Expression with Sed      # 
 #####################################
 
-sed 's/string1/string2/g' 			# Modify anystring1 to anystring2
-sed 's/\(.*\)1/\12/g'			# Remove comments and blank lines
-sed 's/[ \t]*$//'	# Remove trailing spaces from lines
+sed 's/string1/string2/g' in > out  # Modify anystring1 to anystring2
+sed 's/\(.*\)1/\12/g' in > out      # Remove comments and blank lines
+sed 's/[ \t]*$//' in > out          # Remove trailing spaces from lines
 
 cat file | sed -n '1000{p;q}'	# Print 1000th line of file
 sed -n '10,20p;20q'				# Print lines 10 to 20
-sed -i 42d ~/.ssh/known_hosts		# Delete a particular line
+sed -i 42d in    # Delete a particular line
 
 ls /usr/bin | pr -T9 -W$COLUMNS		Print in 9 columns to width of terminal
 
