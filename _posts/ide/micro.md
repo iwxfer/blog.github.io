@@ -1,0 +1,13 @@
+# micro.md
+
+In file `~/.config/micro/bindings.json:`
+
+```json
+{
+    "Alt-h": "SelectLeft",
+    "Alt-j": "SelectDown",
+    "Alt-k": "SelectUp",
+    "Alt-l": "SelectRight"
+}
+```
+
