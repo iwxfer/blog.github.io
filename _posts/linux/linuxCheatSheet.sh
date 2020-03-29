@@ -1,8 +1,7 @@
 # postscrpit manual to pdf
 man -t man | ps2pdf
 
-#  Regular Expression with Sed      # 
-#####################################
+# Regular Expression with Sed
 
 sed 's/string1/string2/g' in > out  # Modify anystring1 to anystring2
 sed 's/\(.*\)1/\12/g' in > out      # Remove comments and blank lines
@@ -13,6 +12,8 @@ sed -n '10,20p;20q'				# Print lines 10 to 20
 sed -i 42d in    # Delete a particular line
 
 ls /usr/bin | pr -T9 -W$COLUMNS		Print in 9 columns to width of terminal
+
+# Search for text in files
 
 find -name '*.[ch]' | xargs grep -E 'expr'		# Search 'expr' in this dir and below. See also findrepo
 find -type f -print0 | xargs -r0 grep -F 'example'	# .. regular files for 'example' in this dir and below
@@ -25,6 +26,8 @@ find dir/ -name '*.txt' | tar -c --files-from=- | bzip2 > dir_txt.tar.bz2	Make a
 find dir/ -name '*.txt' | xargs cp -a --target-directory=dir_txt/ --parents	Make copy of subset of dir/ and below
 dd bs=1M if=/dev/sda | gzip | ssh user@remote 'dd of=sda.gz'			Backup harddisk to remote machine
 
+# SMB
+
 smbclient -L windows_box # List shares on windows machine or samba server
  
 mount -t smbfs -o fmask=666,guest //windows_box/share /mnt/share # Mount a windows share
@@ -34,16 +37,16 @@ Send popup to windows machine (off by default in XP sp2)
 
 
 sort -t. -k1,1n -k2,2n -k3,3n -k4,4n		# Sort IPV4 ip addresses
-
 tr -dc '[:print:]' < /dev/urandom			# Filter non printable characters
-•
+
 history | wc -l
 
 ltrace -f -e getenv ls >/dev/null
-List library calls made by command
+
+# List library calls made by command
 •
 lsof -p $$
-List paths that process id has open
+# List paths that process id has open
 •
 lsof ~
 List processes that have specified path open
@@ -51,10 +54,10 @@ List processes that have specified path open
 tcpdump not port 22
 Show network traffic except ssh. See also tcpdump_not_me
 
-ps -e -o pid,args --forest # List processes in a hierarchy
+ps -e -o pid,args --forest                   # List processes in a hierarchy
 ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu | sed '/^ 0.0 /d' # List processes by % cpu usage
 ps -e -orss=,args= | sort -b -k1,1n | pr -TW$COLUMNS # List processes by mem (KB) usage. See also ps_mem.py
-•
+
 ps -C firefox-bin -L -o pid,tid,pcpu,state
 List all threads for a particular process
 •
@@ -70,9 +73,7 @@ watch -n.1 'cat /proc/interrupts'
 Watch changeable data continuously
 system information (see also sysinfo) ('#' means root access is required)
 •
-uname -a
-Show kernel version and system architecture
-•
+uname -a # Show kernel version and system architecture
 head -n1 /etc/issue
 Show name and version of distribution
 •

@@ -26,10 +26,10 @@ tar --exclude={*.png,.git,node_modules} -cf __TAR__.tar dir
 tar -c $__DIR__/ | gzip | gpg -c | ssh $__USER__@$__REMOTE__ "dd of=$__FILE__.tar.gz.gpg"
 
 # Compress 7z
-alias zipp=7za
-zipp a -r __ZIP__.7z __DIR__/
-zipp a -t7z -p -r __ZIP__.7z __DIR__/
-zipp e __ZIP__.7z
+alias zzip=7za
+zzip a -r __ZIP__.7z __DIR__/
+zzip a -t7z -p -r __ZIP__.7z __DIR__/
+zzip e __ZIP__.7z
 
 ###################
 ### Permissions ###
@@ -57,11 +57,13 @@ echo $HISTFILE && echo $HISTSIZE
 
 # command line init `.bashrc`
 export HISTCONTROL=ignoreboth
-export HISTSIZE=500
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+export HISTIGNORE="pwd:history"
+export PS1="\e[1;33m[\u@\h \W]\$ \e[m"
 
 # as root /etc/profile
 HOSTNAME='/bin/hostname'
-HISTSIZE=1000
 
 # Colors
 LS_COLORS=$LS_COLORS:'di=1;36:'; export LS_COLORS
