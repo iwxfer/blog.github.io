@@ -1,4 +1,4 @@
-# Curl
+# Mastering cURL
 
 ### 1. Download
 
