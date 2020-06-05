@@ -5,17 +5,26 @@ date: 2020-05-06
 
 # FluentPDO Cheatsheet
 
+Query 
+
+```sql
+SELECT article.* FROM article
+```
+
 ```php
-<?
-$query = $fpdo->from('article') // SELECT article.* FROM article
+$query = $fpdo->from('article') 
             ->where('published_at > ?', $date)
             ->orderBy('published_at DESC')
             ->limit(5);
+
 foreach ($query as $row) {
     echo "$row[title]\n";
 }
-$query->fetchAll();
 
+$query->fetchAll();
+```
+
+```php
 $query = $fpdo->from('article') // SELECT article.*, user.name FROM article 
               ->leftJoin('user ON user.id = article.user_id') // LEFT JOIN user ON user.id = article.user_id
               ->select('user.name');
