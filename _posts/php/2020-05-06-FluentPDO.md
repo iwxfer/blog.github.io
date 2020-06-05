@@ -1,3 +1,11 @@
+---
+title: ADB Commands
+date: 2019-09-01
+---
+
+# FluentPDO Cheatsheet
+
+```php
 <?
 $query = $fpdo->from('article') // SELECT article.* FROM article
             ->where('published_at > ?', $date)
@@ -92,3 +100,4 @@ $query = $query->select(null)->select('id'); # set "SELECT id FROM .... WHERE"
 $fpdo->debug = true        // log queries to STDERR (for console debugging)
 $fpdo->debug = $callback   // or set $callback($FluentQuery)  
                            // @see tests/26-debug.phpt for expample usage
+```

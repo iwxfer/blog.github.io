@@ -1,8 +1,8 @@
-La web desde línea de comandos: secretos de cURL
+# Curl
 
-### 1. Descargar archivos con cURL
+### 1. Download
 
-Este es el truco más simple, y si sabes algo de línea de comandos en linux, ya lo habrás intuidos. Solamente se agreag al final el simbolo de mayor `>` y pones el nombre del archivo donde quieres que vaya el contenido.
+Add symbol `>` and put the filename after that
 
     curl http://www.centos.org > centos-org.html
 
@@ -32,4 +32,4 @@ Se puede agreagar más parámetros POST:
 
 Fuentes:
 
-http://www.thegeekstuff.com/2012/04/curl-examples/?utm_source=feedburner
+http://www.thegeekstuff.com/2012/04/curl-examples/
