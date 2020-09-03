@@ -2,7 +2,6 @@
 man -t man | ps2pdf
 
 # Regular Expression with Sed
-
 sed 's/string1/string2/g' in > out  # Modify anystring1 to anystring2
 sed 's/\(.*\)1/\12/g' in > out      # Remove comments and blank lines
 sed 's/[ \t]*$//' in > out          # Remove trailing spaces from lines
@@ -39,20 +38,10 @@ Send popup to windows machine (off by default in XP sp2)
 sort -t. -k1,1n -k2,2n -k3,3n -k4,4n		# Sort IPV4 ip addresses
 tr -dc '[:print:]' < /dev/urandom			# Filter non printable characters
 
-history | wc -l
-
 ltrace -f -e getenv ls >/dev/null
 
-# List library calls made by command
-•
-lsof -p $$
-# List paths that process id has open
-•
-lsof ~
-List processes that have specified path open
-•
-tcpdump not port 22
-Show network traffic except ssh. See also tcpdump_not_me
+lsof -p $$ # List paths that process id has open
+lsof ~ # List processes that have specified path open
 
 ps -e -o pid,args --forest                   # List processes in a hierarchy
 ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu | sed '/^ 0.0 /d' # List processes by % cpu usage
@@ -66,9 +55,7 @@ List info for particular process IDs
 •
 last reboot
 Show system reboot history
-•
 
-•
 watch -n.1 'cat /proc/interrupts'
 Watch changeable data continuously
 system information (see also sysinfo) ('#' means root access is required)
@@ -104,26 +91,13 @@ Display SMBIOS/DMI information
 smartctl -A /dev/sda | grep Power_On_Hours
 How long has this disk (system) been powered on in total
 #
-hdparm -i /dev/sda
-Show info about disk sda
-#
-hdparm -tT /dev/sda
-Do a read speed test on disk sda
-#
-badblocks -s /dev/sda
-Test for unreadable blocks on disk sda
+hdparm -i /dev/sda           # Show info about disk sda
+hdparm -tT /dev/sda          # Do a read speed test on disk sda
+badblocks -s /dev/sda        # Test for unreadable blocks on disk sda
+
 interactive (see also linux keyboard shortcuts)
-•
-gnuplot
-Interactive/scriptable graphing
-•
+
 alias hd='od -Ax -tx1z -v'
 Handy hexdump. (usage e.g.: • hd /proc/self/cmdline | less)
-•
-alias realpath='readlink -f'
-Canonicalize path. (usage e.g.: • realpath ~/../$USER)
 
-set | grep $USER
-Search current environment
- 
 touch -c -t 0304050607 file # Set file timestamp (YYMMDDhhmm)

@@ -50,25 +50,6 @@ sudo ldconfig
 find /tmp -size 0 -print0 | xargs -0 rm
 find . -size 0 -delete
 
-###############
-### .bashrc ###
-###############
-echo $HISTFILE && echo $HISTSIZE
-
-# command line init `.bashrc`
-export HISTCONTROL=ignoreboth
-export HISTSIZE=100000
-export HISTFILESIZE=100000
-export HISTIGNORE="pwd:history"
-export PS1="\e[1;33m[\u@\h \W]\$ \e[m"
-
-# as root /etc/profile
-HOSTNAME='/bin/hostname'
-
-# Colors
-LS_COLORS=$LS_COLORS:'di=1;36:'; export LS_COLORS
-LS_COLORS=$LS_COLORS:'di=1;33:'; export LS_COLORS
-
 ################
 ### calendar ###
 ################

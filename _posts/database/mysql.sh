@@ -1,13 +1,23 @@
-# Set `root` password
+export HOST=127.0.0.1
+export USER=root
+export DATABASE=
+export TABLE=
+export BKP_FILE=bkp.sql
+export ZBKP_FILE=bkp.sql.zstd
+
+# export `root` password
 mysqladmin -u root password NEWPASSWORD
 mysqladmin -u root -p'oldpassword' password newpass
 mysqladmin -u user -p oldpassword password newpass
 
 # backup y restore
-mysqldump -u root -p __DATABASE__ > bkp.sql
-mysqldump -h __HOST__ -u __USER__ -p __DATABASE__ > bkp.sql
-mysqldump -u __USER__ -p __DATABASE__ __TABLE__ > bkp.sql
+mysqldump -u root -p $DATABASE > bkp.sql
 mysqldump -u root -p --all-databases > /tmp/bkp.sql
+mysqldump -h $HOST -u $USER -p __DATABASE__ > bkp.sql
+mysqldump -h $HOST -u $USER -p $DATABASE $TABLE > bkp.sql
+mysqldump -h $HOST -u $USER -p $DATABASE $TABLE -C > bkp.sql.zip
+mysqldump -h $HOST -u $USER -p $DATABASE $TABLE -C --compression-algorithms=zstd > $ZBKP_FILE
+# --compress --compression-algorithms=zstd 
 
 mysql -u __USER__ -p < bkp.sql
 mysql -u root -p < bkp.sql
@@ -29,3 +39,9 @@ mysql -u root mysql
 # mysql> \q
 killall mysqld;
 /etc/init.d/mysql start
+
+## Repair 
+mysqld --datadir=/wamp/data --console
+bin\mysqld.exe --datadir=/wamp/data --console --user=root --skip-grant-tables
+use mysql;
+repair table user use_frm;

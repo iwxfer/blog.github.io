@@ -13,9 +13,10 @@ SET PASSWORD FOR ''@'host_name' = PASSWORD('new_password');
 
 -- user management
 SELECT Host, User, Password FROM mysql.user
-CREATE USER usuario; -- IDENTIFIED BY 'password'
+CREATE USER __USER__;
+CREATE USER __USER__ IDENTIFIED BY '__PASS__';
 UPDATE users SET password=PASSWORD('password') WHERE user='usuario';
-DROP USER usuario;
+DROP USER __USER__;
 
 -- GRANT tipo_privilegio ON {nombre_tabla | * | *.* | nombre_bd.*} TO usuario;
 -- REVOKE tipo_privilegio ON {nombre_tabla | * | *.* | nombre_bd.*} FROM usuario;
@@ -48,6 +49,7 @@ CREATE TABLE Students (
     PRIMARY KEY (id),
     FULLTEXT KEY idx_title_description (name, description)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+-- CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
 
 CREATE TABLE employees (
     emp_no      INT             NOT NULL,  -- UNSIGNED AUTO_INCREMENT??
@@ -131,4 +133,24 @@ UPDATE table SET
         [WHERE condition(s)];
 
 -- view table type MyISAM, innodb, ...
-SHOW TABLE STATUS WHERE Name = 'table_name'
+SHOW TABLE STATUS WHERE Name = '__TABLE__'
+
+-- Repair database
+CHECK TABLE __TABLE__;
+REPAIR TABLE __TABLE__;
+REPAIR TABLE mysql.user;
+
+-- Table size
+SELECT
+  TABLE_NAME AS `Table`,
+  ROUND((DATA_LENGTH + INDEX_LENGTH) / 1024 / 1024) AS `Size (MB)`
+FROM
+  information_schema.TABLES
+WHERE
+  TABLE_SCHEMA = "__DATABASE__"
+ORDER BY
+  (DATA_LENGTH + INDEX_LENGTH)
+DESC;
+
+-- Show indexes of table
+SHOW INDEXES FROM __TABLE__ IN __DATABASE__;
