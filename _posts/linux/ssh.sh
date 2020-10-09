@@ -16,11 +16,14 @@ TCPKeepAlive no
 ClientAliveInterval 30
 ClientAliveCountMax 100
 
-# Copy with permissions to $USER's home directory on $HOST
-scp -p -r $user@$host: file dir/
+# SCP with permissions
+scp -p -r $__USER__@$__HOST__:$__SRC__ $__TARGET__
+
+# Use key file
+scp -i ~/.ssh/superkey -p 87 $__USER__@$__HOST__:$__SRC__ $__TARGET__
 
 # Forward connections to $HOSTNAME:8080 out to $HOST:80
-ssh -g -L 8080:$hostname:80 root@$host
+ssh -g -L 8080:$hostname:80 root@$__HOST__
 
 ssh -L 3333:localhost:3306 __USER__@__REMOTE__
 mysql -u __MYUSER__ -p -P 3333 -h 127.0.0.1 

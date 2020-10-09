@@ -14,7 +14,7 @@
 - `Ctrl` + `Shift` + `->` : Next location
 - `Ctrl` + `Shift` + `<-` : Previous location
 
-## Structure Navigation
+## Code Navigation
 
 - `F2`          Next error
 - `Ctrl` + `N`  Navigate to Class 
