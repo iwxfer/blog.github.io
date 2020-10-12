@@ -48,7 +48,7 @@ CREATE TABLE Students (
     description TEXT,
     PRIMARY KEY (id),
     FULLTEXT KEY idx_title_description (name, description)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 -- CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
 
 CREATE TABLE employees (
@@ -61,14 +61,14 @@ CREATE TABLE employees (
     PRIMARY KEY (emp_no)                   -- Index built automatically on primary-key column
                                            -- INDEX (first_name)
                                            -- INDEX (last_name)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE departments (
     dept_no     CHAR(4)         NOT NULL,  -- in the form of 'dxxx'
     dept_name   VARCHAR(40)     NOT NULL,
     PRIMARY KEY (dept_no),                 -- Index built automatically
     UNIQUE  KEY (dept_name)                -- Build INDEX on this unique-value column
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE dept_emp (
     emp_no      INT         NOT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE dept_emp (
            -- ON UPDATE CASCADE??
     PRIMARY KEY (emp_no, dept_no)
            -- Might not be unique?? Need to include from_date
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
