@@ -2,9 +2,9 @@
 
 ## File management
 
-- `Ctrl` + `Shift` + `C`  Copy Path 
-- `Ctrl` + `E` Recent Files 
+- `Ctrl` + `E` : Recent Files 
 - `Ctrl` + `Shift` + `N` : Open any file quickly
+- `Ctrl` + `Shift` + `C` : Copy Path 
 
 ## Navigation
 
@@ -17,10 +17,8 @@
 ## Code Navigation
 
 - `F2`          Next error
-- `Ctrl` + `N`  Navigate to Class 
-- `Alt`  + `7`  Show Structure
+- `Ctrl` + `N`  Navigate to Class
 - `Alt`  + `F7` Usages
-- `Ctrl` + `N`  Find a type or class
 - `Ctrl` + `F12` Show all the members of current type
 
 ## Debugging 
@@ -31,6 +29,7 @@ F7 Step Into
 F8 Step Over
 Shift + F8 Step Out
 F9 Resume
+`Ctrl` + `F8` : Add breackpoint
 
 ## Refactoring
 

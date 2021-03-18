@@ -45,3 +45,7 @@ mysqld --datadir=/wamp/data --console
 bin\mysqld.exe --datadir=/wamp/data --console --user=root --skip-grant-tables
 use mysql;
 repair table user use_frm;
+
+C:\bin\mariadb-10.5.3-winx64\bin\mysql_install_db.exe --datadir=/wamp/data --service=MariaDB
+sc start MariaDB
+C:\bin\mariadb-10.5.3-winx64\bin\mysqld --datadir=/wamp/data

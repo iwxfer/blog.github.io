@@ -2,7 +2,4 @@
 
 ## hotkeys
 
-
-```
-CTRL+SHIFT+E: Goto Project navigation
-```
+- `CTRL` + `SHIFT` + `E`: Goto Project navigation

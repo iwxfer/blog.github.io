@@ -15,8 +15,9 @@
 
 ## Window Navigation
 
-- `Ctrl` + `F7` : Editor
-- `Alt + Shift + Q C` : Console
+- `Ctrl` + `F7` : Change windows focus
+- `Alt + Shift + Q V` : View Variables
+- `Alt + Shift + Q C` : View Console
 
 ## Code Navigation
 
