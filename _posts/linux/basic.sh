@@ -82,3 +82,30 @@ mount -o loop cdrom.iso /mnt/dir
 # Create cdrom image from contents of dir 
 mkisofs -V LABEL -r dir | gzip > cdrom.iso.gz
 
+############################
+# Search for text in files
+
+find -name '*.[ch]' | xargs grep -E 'expr'		# Search 'expr' in this dir and below. See also findrepo
+find -type f -print0 | xargs -r0 grep -F 'example'	# .. regular files for 'example' in this dir and below
+find -maxdepth 1 -type f | xargs grep -F 'example'	# .. regular files for 'example' in this dir
+find -maxdepth 1 -type d | while read dir; do echo $dir; echo cmd2; done	Process each item with multiple commands (in while loop)
+locate -r 'file[^/]*\.txt'		Search cached index for names. This re is like glob *file*.txt
+grep --color reference /usr/share/dict/words		Highlight occurances of regular expression in dictionary
+
+find dir/ -name '*.txt' | tar -c --files-from=- | bzip2 > dir_txt.tar.bz2	Make archive of subset of dir/ and below
+find dir/ -name '*.txt' | xargs cp -a --target-directory=dir_txt/ --parents	Make copy of subset of dir/ and below
+
+###############
+### Replace ###
+###############
+
+sed 's/string1/string2/g' in > out  # Modify anystring1 to anystring2
+sed s/\(.*\)1/\12/g in > out      # Remove comments and blank lines
+sed 's/[ \t]*$//' __FILE__       # Remove trailing spaces from lines
+sed -i 's/xx/yy/g' __FILE__                  # replace file
+sed "s/ones/one's/"               # single quote
+
+cat file | sed -n '1000{p;q}'	# Print 1000th line of file
+sed -n '10,20p;20q'				# Print lines 10 to 20
+sed 42d in    # Delete a particular line
+
