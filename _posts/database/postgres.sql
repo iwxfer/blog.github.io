@@ -22,6 +22,8 @@ sudo -u postgres psql -c "CREATE DATABASE __DATABASE__ WITH OWNER __USER__ ENCOD
 sudo -u postgres psql -c "ALTER DATABASE __DATABASE__ OWNER TO __USER__;"
 
 -- utils
-\l: list databases
-\dg : list roles/groups
-\dt : list of tables
+\l           -- list databases
+\dg          -- list roles/groups
+\dt          -- list of tables
+\c DATABASE  -- connect to database
+\du+         -- list user accounts (roles)
