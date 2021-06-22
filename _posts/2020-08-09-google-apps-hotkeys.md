@@ -1,11 +1,11 @@
-# Keyboard shortcuts
+### Gmail
 
-## Gmail
-
-- `Shift` + `?` : Enable
-- `Ctrl` + `b` : bold
-- `Ctrl` + `i` : italic
-- `Ctrl` + `u` : underline
+| Shortcut      |               |
+|---------------|:------------- |
+| `Shift` + `?` | Enable        |
+| `Ctrl` + `b`  | Bold          |
+| `Ctrl` + `i`  | Italic        |
+| `Ctrl` + `u`  | Underline     |
 
 - `c` :  compose
 - `Ctrl` + `\` : Remove formatting
