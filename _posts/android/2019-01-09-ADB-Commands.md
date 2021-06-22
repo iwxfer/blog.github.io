@@ -2,7 +2,7 @@
 title: ADB Commands
 ---
 
-# ADB commands
+# Most used ADB commands for Android Development
 
 - In folder `~/Library/Android/sdk/platform-tools`
 

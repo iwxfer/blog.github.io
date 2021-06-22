@@ -1,6 +1,4 @@
-
 smbclient -L windows_box # List shares on windows machine or samba server
- 
 mount -t smbfs -o fmask=666,guest //windows_box/share /mnt/share # Mount a windows share
  
 # Send popup to windows machine (off by default in XP sp2)
@@ -15,14 +13,11 @@ ltrace -f -e getenv ls >/dev/null
 lsof -p $$ # List paths that process id has open
 lsof ~ # List processes that have specified path open
 
-ps -e -o pid,args --forest                   # List processes in a hierarchy
 ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu | sed '/^ 0.0 /d' # List processes by % cpu usage
 ps -e -orss=,args= | sort -b -k1,1n | pr -TW$COLUMNS # List processes by mem (KB) usage. See also ps_mem.py
-
-ps -C firefox-bin -L -o pid,tid,pcpu,state
-List all threads for a particular process
-•
+ps -C firefox-bin -L -o pid,tid,pcpu,state  # List all threads for a particular process
 ps -p 1,2    # List info for particular process IDs
+
 last reboot  # Show system reboot history
 watch -n.1 'cat /proc/interrupts'  # Watch changeable data continuously
 
@@ -51,6 +46,5 @@ alias hd='od -Ax -tx1z -v'
 Handy hexdump. (usage e.g.: • hd /proc/self/cmdline | less)
 
 touch -c -t 0304050607 file # Set file timestamp (YYMMDDhhmm)
-
 
 sed -i 's/",/",\n/g'

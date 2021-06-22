@@ -5,11 +5,7 @@ date: 2020-05-06
 
 # FluentPDO Cheatsheet
 
-Query 
-
-```sql
-SELECT article.* FROM article
-```
+- Queries
 
 ```php
 $query = $fpdo->from('article') 
@@ -36,14 +32,20 @@ $query = $fpdo->from('article')->select('user.name');
 // SELECT
 $query = $fpdo->from('article')->where('id', 1);
 $query = $fpdo->from('user', 1);
+```
 
-// INSERT
+- INSERT
+
+```php
 $values = array('title' => 'article 1', 'content' => 'content 1');
 
 $query = $fpdo->insertInto('article')->values($values);
 $query = $fpdo->insertInto('article', $values);
+```
 
-// UPDATE
+- UPDATE
+
+```php
 $set = array('published_at' => new FluentLiteral('NOW()'));
 
 $query = $fpdo->update('article')->set($set)->where('id', 1);

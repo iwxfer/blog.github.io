@@ -4,15 +4,14 @@
 # |      |       |       month of the year (1-12),
 # |      |       |       |       day of the week (0-6 with 0=Sunday).
 # |      |       |       |       |       commands
-3        2       *       *       0,6     /some/command/to/run
-3        2       *       *       1-5     /another/command/to/run
+  3      2       *       *       0,6     /some/command/to/run
+  3      2       *       *       1-5     /another/command/to/run
 
-* * 28 * * /opt/coolstack/php5/bin/php /opt/coolstack/apache2/htdocs/testdevelocidad/util/borrar_old.php
 15 11 * * * touch "/tmp/$(date +%d-%m-%Y).sql"
 
-# Cron Logs #
+# Cron Logs
 /var/cron/log 	# (cron history information)
-/var/cron/olog	#	(moves log file to /var/cron/olog if log file exceeds system ulimit)
+/var/cron/olog	# (moves log file to /var/cron/olog if log file exceeds system ulimit)
 
 # The file looks something like this:
 ! *** cron started ***   pid = 260 Tue Jun  4 00:30:56 2002

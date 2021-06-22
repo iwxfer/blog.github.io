@@ -18,13 +18,13 @@
 - `Ctrl` + `F7` : Change windows focus
 - `Alt + Shift + Q V` : View Variables
 - `Alt + Shift + Q C` : View Console
+- `Ctrl` + `F8` : Change perspective
 
 ## Code Navigation
 
 `Ctrl + Shift + G` : Usages or References
 `Ctrl + Alt + H` : Call hierarchy
 
-`Ctrl` + `F8` : Change perspective
 `Ctrl` + `Shift` + `T` : Find a type or class
 
 - `Ctrl` + `O` : Show all the members of current type
@@ -43,6 +43,6 @@
 
 # Refactor
 
-Alt + Shift + C Change signature
-Ctrl + 1 Quick fix
-`Alt + Shift + R` : Refactor Replace
+- Alt + Shift + C Change signature
+- Ctrl + 1 Quick fix
+- `Alt + Shift + R` : Refactor Replace

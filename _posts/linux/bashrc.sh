@@ -1,9 +1,6 @@
-###############
-### .bashrc ###
-###############
-# echo $HISTFILE && echo $HISTSIZE
-
 # command line init `.bashrc`
+
+# echo $HISTFILE && echo $HISTSIZE
 export HISTCONTROL=ignoreboth
 export HISTSIZE=100000
 export HISTFILESIZE=100000
