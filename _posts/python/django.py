@@ -112,26 +112,3 @@ response.content # will display the response
 ################## Web Debugging ##################
 return HttpResponse(str("ok"))
 request.META['wsgi.errors'].write("testing")
-
-
-
-"""----------------------------------------------------------
-    South
-   ----------------------------------------------------------"""
-python manage.py migrate
-
-# Initial
-python manage.py schemamigration __app__ --initial
-python manage.py migrate __app__
-# Update
-python manage.py schemamigration __app__ --auto
-python manage.py migrate __app__
-# then syncdb
-python manage.py migrate __app__ --fake 
-
-# --list: Shows what migrations are available, and puts a * next to ones which have been applied.
-# --merge: Runs any missed (out-of-order) migrations without rolling back to them.
-# --no-initial-data: Doesn't load in any initial data fixtures after a full upwards migration.
-# --fake: Records the migration sequence as having been applied, but doesn't actually run it.
-# --db-dry-run: this is useful for sanity-testing migrations to check API calls are correct.
-

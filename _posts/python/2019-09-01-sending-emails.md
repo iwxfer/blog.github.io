@@ -1,4 +1,4 @@
-Sending s simple email
+Sending a simple email
 
 ```python
 #!/usr/bin/python3

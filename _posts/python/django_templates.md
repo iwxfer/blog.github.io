@@ -1,3 +1,5 @@
+
+```html
 <html>
 <head>
     <title>Search</title>
@@ -65,3 +67,4 @@
 	{% endif %}
 </body>
 </html>
+```
