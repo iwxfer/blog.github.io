@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "UTF 8 Arrows :)"
+title: "UTF-8 Symbols"
 ---
 
 # Arrows

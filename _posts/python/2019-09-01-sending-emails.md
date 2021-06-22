@@ -6,8 +6,6 @@ tags: ["python", "email"]
 - Sending a single email without format
 
 ```python
-#!/usr/bin/python3
-
 import smtplib
 
 sender = 'from@fromdomain.com'
