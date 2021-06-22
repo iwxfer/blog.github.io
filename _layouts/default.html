@@ -5,6 +5,7 @@
     <header>
         <a class="site-title" href="{% include relative %}" >{{ site.title }}</a>
         <div style="display: inline-block">
+		    <a href="/">Punchao Blog</a>
             {% for my_page in site.pages %}{% if my_page.title and my_page.noindex != true %}
              | <a href="{% include relative %}{{ my_page.url | relative_url }}">{{ my_page.title }}</a>
             {% endif %}{% endfor %}
