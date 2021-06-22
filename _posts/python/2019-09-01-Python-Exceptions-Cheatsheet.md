@@ -1,5 +1,5 @@
 ---
-title: ADB Commands
+title: Python Exceptions Cheatsheet
 tags: ["python", "exceptions"]
 ---
 

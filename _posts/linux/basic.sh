@@ -3,9 +3,7 @@ __USER__=user
 __REMOTE__=fer44.com
 __FILE__=bkp
 
-###################
-### Compression ###
-###################
+### Compression
 
 # Compress bzip2 and gz+gpg
 tar -c  __DIR__ | bzip2 > __FILE__.tar.bz2
@@ -31,9 +29,7 @@ zzip a -r __ZIP__.7z __DIR__/
 zzip a -t7z -p -r __ZIP__.7z __DIR__/
 zzip e __ZIP__.7z
 
-###################
-### Permissions ###
-###################
+### Permissions
 
 # Permissions chmod [ugoa...][[+-=][rwxXst]
 chmod -R g=u /opt/*  # same permissions to group
@@ -50,12 +46,12 @@ sudo ldconfig
 find /tmp -size 0 -print0 | xargs -0 rm
 find . -size 0 -delete
 
-################
-### calendar ###
-################
-cal -3 # Display a calendar
-cal 9 1752 # Display a calendar for a particular month year
-date -d fri # What date is it this friday. See also day
+### calendar
+
+cal -3         # Display a calendar
+cal 9 1752     # Display a calendar for a particular month year
+date -d fri    # What date is it this friday. See also day
+
 date --date='25 Dec' +%A # What day does xmas fall on, this year
 date --date='@2147483647' # Convert seconds since the epoch (1970-01-01 UTC) to date
 TZ='America/Los_Angeles' date # What time is it on west coast of US (use tzselect to find TZ)

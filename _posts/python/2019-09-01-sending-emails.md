@@ -1,4 +1,9 @@
-Sending a simple email
+---
+title: How to send Emails with Python
+tags: ["python", "email"]
+---
+
+- Sending a single email without format
 
 ```python
 #!/usr/bin/python3
@@ -26,7 +31,7 @@ except SMTPException:
    print "Error: unable to send email"
 ```
 
-For sending content as HTML just change themessage
+- For sending HTML content, just change the message to:
 
 ```python
 message = """From: From Person <from@fromdomain.com>
@@ -42,4 +47,4 @@ This is an e-mail message to be sent in HTML format
 """
 ```
 
-* [advanced](https://realpython.com/python-send-email/)
+* [source](https://realpython.com/python-send-email/)
