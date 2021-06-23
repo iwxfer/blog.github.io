@@ -1,3 +1,14 @@
+int(M)          int(5)
+float(M,D)      float(12,3)
+double(M,D)     double(20,3)
+timestamp(M)    timestamp(8)    -- for YYYYMMDD
+                timestamp(12)   -- for YYYYMMDDHHMMSS
+char(M)         char(10)        -- Fixed-length strings
+varchar(M)      varchar(20)     -- Variable-length strings
+blob                            -- large ammount of binary data
+text                            -- large string
+enum('val1','val2', ...)        -- Values chosen from a list
+
 -- database create/delete management
 CREATE DATABASE __DATABASE__ CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 DROP DATABASE __DATABASE__;
@@ -12,7 +23,7 @@ SET PASSWORD FOR ''@'localhost' = PASSWORD('new_password');
 SET PASSWORD FOR ''@'host_name' = PASSWORD('new_password');
 
 -- user management
-SELECT Host, User, Password FROM mysql.user
+SELECT Host, User, Password FROM mysql.user INTO OUTFILE '/tmp/users.txt';
 CREATE USER __USER__;
 CREATE USER __USER__ IDENTIFIED BY '__PASS__';
 UPDATE users SET password=PASSWORD('password') WHERE user='usuario';
@@ -87,19 +98,6 @@ CREATE TABLE dept_emp (
     PRIMARY KEY (emp_no, dept_no)
            -- Might not be unique?? Need to include from_date
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-
-
-int(M)          int(5)
-float(M,D)      float(12,3)
-double(M,D)     double(20,3)
-timestamp(M)    timestamp(8)    -- for YYYYMMDD
-                timestamp(12)   -- for YYYYMMDDHHMMSS
-char(M)         char(10)        -- Fixed-length strings
-varchar(M)      varchar(20)     -- Variable-length strings
-blob                            -- large ammount of binary data
-text                            -- large string
-enum('val1','val2', ...)        -- Values chosen from a list
 
 -- insert basics
 INSERT INTO Students VALUES
