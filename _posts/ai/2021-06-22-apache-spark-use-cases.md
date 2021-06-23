@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Casos de Uso de Apache Spark"
-tags: ["apache spark", "ai"]
+title: "Apache Spark Use Cases"
+tags: ["apache spark", "ai", "stream processing"]
 ---
+
+![Apache Spark architecture](https://i.imgur.com/IcgA9XN.jpg)
 
 Apache Spark es uno de los frameworks de Big Data más utilizados profesionales del Big Data. En 2009, un equipo de Berkeley desarrolló Spark bajo la licencia de Apache Software Foundation y, desde entonces, la popularidad de Spark se ha extendido ampliamante.
 

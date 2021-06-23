@@ -78,8 +78,12 @@ mount -o loop cdrom.iso /mnt/dir
 # Create cdrom image from contents of dir 
 mkisofs -V LABEL -r dir | gzip > cdrom.iso.gz
 
-############################
-# Search for text in files
+# Search for text in files 
+grep --color -rnw '/path' -e 'pattern'
+grep --color --include=\*.{c,h} -rnw '/path/to/somewhere/' -e "pattern"
+grep --exclude=\*.o -rnw '/path/to/somewhere/' -e "pattern"
+grep --exclude-dir={dir1,dir2,*.dst} -rnw '/path/to/somewhere/' -e "pattern"
+rg 
 
 find -name '*.[ch]' | xargs grep -E 'expr'		# Search 'expr' in this dir and below. See also findrepo
 find -type f -print0 | xargs -r0 grep -F 'example'	# .. regular files for 'example' in this dir and below

@@ -14,23 +14,22 @@ ffmpeg -i __IN__.ogg -acodec libmp3lame __OUT__.mp3
 
 ### Create gif from Video, image magic
 
-    convert some.gif some%05d.png
-    ffmpeg -i some%05d.png some.avi
-    rm some*.png
+convert some.gif some%05d.png
+ffmpeg -i some%05d.png some.avi
+rm some*.png
 
 ### Create video from images
 
-    ffmpeg -f image2 -i image%d.jpg video.mpg
-    convert 'images.gif[0]' image.png
+ffmpeg -f image2 -i image%d.jpg video.mpg
+convert 'images.gif[0]' image.png
 
-    set FOLDER=C:\Users\bufer\Downloads\Telegram Desktop\fun
-    set FOLDER=D:\disk\YandexDisk\Screenshots
-    set FOLDER=D:\disk\YandexDisk\images\fotos_carro
-    set IMAGE=ss2
-    C:\dev\imagemagic\magick.exe "%FOLDER%\%IMAGE%.png" -resize 50% "%FOLDER%\%IMAGE%_50.jpg"
+set FOLDER=C:\Users\bufer\Downloads\Telegram Desktop\fun
+set IMAGE=ss2
+C:\dev\imagemagic\magick.exe "%FOLDER%\%IMAGE%.png" -resize 50% "%FOLDER%\%IMAGE%_50.jpg"
 
 ### mp3 to ogg
+ffmpeg -i test.mp3 -c:a libvorbis -b:a 64k test.ogg
+ffmpeg -i toxicas.mp3 -c:a libvorbis -b:a 64k toxicas.ogg
 
-    c:\dev\7Zip\ffmpeg -i test.mp3 -c:a libvorbis -b:a 64k test.ogg
-    c:\dev\7Zip\fffmpeg -i toxicas.mp3 -c:a libvorbis -b:a 64k toxicas.ogg
-
+# remove audio
+ffmpeg -i %in% -vcodec copy -an %out% 
