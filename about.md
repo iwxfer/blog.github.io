@@ -4,9 +4,6 @@ title: About
 permalink: /about/
 ---
 
-
-```
-
 #### Internal link
 
 On IPFS, all internal links must be relative links.

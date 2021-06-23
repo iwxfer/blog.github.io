@@ -80,7 +80,7 @@ mkisofs -V LABEL -r dir | gzip > cdrom.iso.gz
 
 # Search for text in files 
 grep --color -rnw '/path' -e 'pattern'
-grep --color --include=\*.{c,h} -rnw '/path/to/somewhere/' -e "pattern"
+grep --color --include=\*.{c,h} -rnw '/path' -e "pattern"
 grep --exclude=\*.o -rnw '/path/to/somewhere/' -e "pattern"
 grep --exclude-dir={dir1,dir2,*.dst} -rnw '/path/to/somewhere/' -e "pattern"
 rg 
