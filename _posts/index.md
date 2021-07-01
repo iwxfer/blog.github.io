@@ -16,11 +16,11 @@ bcdedit /set hypervisorlaunchtype auto
 ## rclone
 
 ```bash
-curl https://rclone.org/install.sh | sudo bash -s beta
+rclone config create bkpmon dropbox [client_id = ] [client_secret = ]
 
 ~\.config\rclone
 rclone sync bkpmon: /bkp   # download
 rclone sync bkp bkpmon:    # sync upload
-rclone copy bkp bkpmon:    # only upload
+rclone copy /tmp/bkp bkpmon:/tmp    # only upload
 ```
 
